@@ -1,0 +1,238 @@
+﻿.container {
+    display: flex;
+}
+
+.sidebar {
+    width: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    color: #ccc;
+    height: 94vh;
+    position: fixed;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 20px;
+    margin-left: 41px;
+    margin-right: 20px;
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+body:before {
+    content: "";
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    margin-left: 3.5vh;
+    margin-top: 1vh;
+    width: calc(100% - 110px);
+    height: calc(100% - 55px);
+    background: rgba(255, 255, 255, 0.1); /* Increased transparency for glass effect */
+    border-radius: 20px;
+    backdrop-filter: blur(15px); /* More blur for glass effect */
+    z-index: -1;
+}
+
+.sidebar-header {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1); /* Increased transparency for glass effect */
+    backdrop-filter: blur(15px); /* More blur for glass effect */
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+    .sidebar-menu li {
+        padding: 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+        position: relative;
+        transition: background 0.3s;
+    }
+
+        .sidebar-menu li.active {
+            background: rgba(255, 255, 255, 0.1); /* Increased transparency for glass effect */
+            backdrop-filter: blur(15px); /* More blur for glass effect */
+        }
+
+            .sidebar-menu li.active::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 100%;
+                width: 8px;
+                background-color: #ff4500;
+                border-radius: 0 5px 5px 0;
+            }
+
+        .sidebar-menu li:hover {
+            background: rgba(255, 255, 255, 0.1); /* Increased transparency for glass effect */
+            backdrop-filter: blur(15px); /* More blur for glass effect */
+        }
+
+        .sidebar-menu li a {
+            color: #ccc;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            font-size: 1em;
+        }
+
+            .sidebar-menu li a .icon {
+                margin-right: 15px;
+            }
+
+            .sidebar-menu li a .text {
+                display: inline-block;
+                flex-grow: 1;
+            }
+
+            .sidebar-menu li a .indicator {
+                margin-left: auto;
+                transition: transform 0.3s;
+            }
+
+.collapsible .submenu {
+    display: none;
+    list-style: none;
+    padding-left: 0px;
+    padding-top: 12px;
+    transition: max-height 0.3s ease-out;
+    overflow: hidden;
+    max-height: 0;
+}
+
+.collapsible.active .submenu {
+    display: block;
+    max-height: 500px; /* Adjust based on content */
+}
+
+.collapsible .submenu li {
+    padding: 10px 20px;
+    border: none;
+}
+
+    .collapsible .submenu li a {
+        font-size: 0.9em;
+        color: #ccc;
+        display: flex;
+        align-items: center;
+    }
+
+        .collapsible .submenu li a i {
+            margin-right: 10px;
+        }
+
+.collapsible .submenu-item-spacing {
+    padding-top: 10px; /* Add padding between submenu items */
+}
+
+.collapsible.active .indicator {
+    transform: rotate(180deg);
+}
+
+/* Body CSS with new gradient color combinations */
+html, body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    background-image: url("https://img.freepik.com/premium-photo/blurred-dark-background-abstract-blurred-background-blurred-background_900706-8622.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #ccc; /* Light text color */
+}
+.card_div {
+    margin-left: 350px;
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 350px);
+}
+
+.cards-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.row{
+    width:150%;
+}
+    .card-body:hover {
+        transform: translateY(-10px);
+    }
+
+.card-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    height: 20vh;
+    position: relative;
+    top: 8vh;
+    left: 5vh;
+    border: 1px solid white;
+    border-radius: 10px;
+    width: 46vh;
+}
+
+    .card-body .icon {
+        font-size: 3.5em;
+        color: #ccc;
+        margin-right: 4vh;
+    }
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-title {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #ccc;
+}
+
+.card-text {
+    font-size: 2em;
+    color: #ccc;
+}
+
+#LineChart {
+     
+    overflow: hidden;
+    position: absolute;
+    right: 10vh;
+    width: 35%;
+    top: 64vh;
+    height: 27%;
+}
+#DonutChart {
+    overflow: hidden;
+    position: absolute;
+    right: 80vh;
+    width: 40%;
+    top: 32vh;
+    height: 59%;
+}
+#IncomeExpenseLineChart {
+     
+    overflow: hidden;
+    position: absolute;
+    right: 10vh;
+    width: 35%;
+    top: 32vh;
+    height: 30%;
+}

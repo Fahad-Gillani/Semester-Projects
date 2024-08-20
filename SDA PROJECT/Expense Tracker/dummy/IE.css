@@ -1,0 +1,345 @@
+﻿/*SIDEBAR*/
+
+.container {
+    display: flex;
+}
+
+.sidebar {
+    width: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    color: #ccc;
+    height: 94vh;
+    position: fixed;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 20px;
+    margin-left: -21vh;
+    margin-right: 20px;
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+body:before {
+    content: "";
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    margin-left: 3.5vh;
+    margin-top: 1vh;
+    width: calc(100% - 110px);
+    height: calc(100% - 55px);
+    background: rgba(255, 255, 255, 0.1); /* Increased transparency for glass effect */
+    border-radius: 20px;
+    backdrop-filter: blur(15px); /* More blur for glass effect */
+    z-index: -1;
+}
+
+.sidebar-header {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1); /* Increased transparency for glass effect */
+    backdrop-filter: blur(15px); /* More blur for glass effect */
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+    .sidebar-menu li {
+        padding: 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+        position: relative;
+        transition: background 0.3s;
+    }
+
+        .sidebar-menu li.active {
+            background: rgba(255, 255, 255, 0.1); /* Increased transparency for glass effect */
+            backdrop-filter: blur(15px); /* More blur for glass effect */
+        }
+
+            .sidebar-menu li.active::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 100%;
+                width: 8px;
+                background-color: #ff4500;
+                border-radius: 0 5px 5px 0;
+            }
+
+        .sidebar-menu li:hover {
+            background: rgba(255, 255, 255, 0.1); /* Increased transparency for glass effect */
+            backdrop-filter: blur(15px); /* More blur for glass effect */
+        }
+
+        .sidebar-menu li a {
+            color: #ccc;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            font-size: 1em;
+        }
+
+            .sidebar-menu li a .icon {
+                margin-right: 15px;
+            }
+
+            .sidebar-menu li a .text {
+                display: inline-block;
+                flex-grow: 1;
+            }
+
+            .sidebar-menu li a .indicator {
+                margin-left: auto;
+                transition: transform 0.3s;
+            }
+
+.collapsible .submenu {
+    display: none;
+    list-style: none;
+    padding-left: 0px;
+    padding-top: 12px;
+    transition: max-height 0.3s ease-out;
+    overflow: hidden;
+    max-height: 0;
+}
+
+.collapsible.active .submenu {
+    display: block;
+    max-height: 500px; /* Adjust based on content */
+}
+
+.collapsible .submenu li {
+    padding: 10px 20px;
+    border: none;
+}
+
+    .collapsible .submenu li a {
+        font-size: 0.9em;
+        color: #ccc;
+        display: flex;
+        align-items: center;
+    }
+
+        .collapsible .submenu li a i {
+            margin-right: 10px;
+        }
+
+.collapsible .submenu-item-spacing {
+    padding-top: 10px; /* Add padding between submenu items */
+}
+
+.collapsible.active .indicator {
+    transform: rotate(180deg);
+}
+
+/* Body CSS with new gradient color combinations */
+html, body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    background-image: url("https://img.freepik.com/premium-photo/blurred-dark-background-abstract-blurred-background-blurred-background_900706-8622.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #ccc; /* Light text color */
+}
+
+ 
+.header {
+    text-align: center;
+    font-size: 2em;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 16px 20px;
+    border-radius: 20px;
+    left: 21%;
+    top: 5%;
+    height: 8vh;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    position: absolute;
+    width: 150vh;
+}
+
+.main-content {
+    margin-left: 421px;
+    padding: 20px;
+    background-color: rgba();
+    border-radius: 10px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(10px);
+    height: 70vh;
+    position: relative;
+    top: 18vh;
+    width: 146vh;
+}
+
+.buttons {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.buttons .btn {
+        padding: 10px 20px;
+        border: none;
+        font-size: 1em;
+        transition: background 0.3s;
+        background: linear-gradient(to bottom right, #4a90e2, #7f8c8d); /* Gradient button background (blue and grey shades) */
+        color: #fff; /* Button text color */
+        cursor: pointer;
+        margin-left:15px;
+        margin-top:8px;
+}
+
+    .buttons .btn:hover {
+        background: linear-gradient(to bottom right, #7f8c8d, #4a90e2); /* Gradient button background on hover (grey and blue shades) */
+    }
+
+    .buttons input {
+        
+        padding: 12px;
+        border: none;
+        border-bottom: 2px solid #ccc;
+        border-radius: 0;
+        background: transparent;
+        color: #ccc;
+        transition: border-color 0.3s, background-color 0.3s;
+        outline: none;
+        color:wheat;
+    }
+
+.buttons .form-control:focus
+{
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+    border-bottom-color: #ccc; /* Border color on focus */
+}
+
+.buttons input:hover
+ {
+    border-bottom-color: #4a90e2;  
+}
+
+.history {
+    margin-top: 20px;
+}
+
+    .history h3 {
+        background: #ff4500;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+    }
+.auto-style1 {
+    height: 463px;
+    overflow-x: hidden;  
+    max-height: 70vh; 
+    overflow-y: scroll;
+    margin-top: 20px;
+}
+.gridview {
+    width: 100%;
+    border-collapse: collapse;
+    color: white;
+    margin-top:2vh;
+    overflow-y:hidden;
+    overflow:scroll;
+
+}
+
+    .gridview th,
+    .gridview td {
+        padding: 10px;
+        text-align: left;
+        background: rgba(255, 255, 255, 0.1) !important;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        color: white; /* Ensure text color is white */
+    }
+
+    .gridview th {
+        background: rgba(255, 255, 255, 0.1) !important;
+    }
+
+    .gridview tr:nth-child(even) {
+        background: rgba(255, 255, 255, 0.05) !important;
+    }
+
+    .gridview tr:hover {
+        background: rgba(255, 255, 255, 0.15) !important;
+    }
+
+    .gridview .btn {
+        padding: 5px 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1em;
+        transition: background 0.3s;
+    }
+
+    .gridview .btn-danger {
+        color: white;
+    }
+
+        .gridview .btn-danger:hover {
+            background: #cc3700;
+        }
+
+    .gridview .btn-primary {
+        background: #007bff;
+        color: white;
+    }
+
+        .gridview .btn-primary:hover {
+            background: #0056b3;
+        }
+
+        .form-group{
+            display:flex;
+            align-content:center;
+        }
+.form-group select {
+    width: 21vh; /* Make input fields fill the entire width */
+    padding: 12px; /* Adjust input field padding */
+    border: none; /* Remove default border */
+    border-bottom: 2px solid #ccc; /* Increase bottom border size */
+    border-radius: 0; /* Remove border radius */
+    background: transparent; /* Make background transparent */
+    color: #ccc; /* Light text color */
+    transition: border-color 0.3s, background-color 0.3s; /* Smooth transition for border and background color */
+    outline: none; /* Remove default focus outline */
+    margin-right:2vh;
+    margin-left:30vh;
+}
+
+.form-group select:focus{
+        background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+        border-bottom-color: #ccc; /* Border color on focus */
+    }
+
+.form-group select:hover{
+    border-bottom-color: #4a90e2; /* Change border color on hover */
+}
+
+.form-group select::-ms-expand {
+    display: none; /* Hide default arrow in IE10 and IE11 */
+}
+
+.form-group select option {
+    color: #333; /* Option text color */
+}
+
+
+ 
+ 

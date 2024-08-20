@@ -1,0 +1,428 @@
+﻿/*SIDEBAR*/
+
+.container {
+    display: flex;
+}
+
+.sidebar {
+    width: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    color: #ccc;
+    height: 94vh;
+    position: fixed;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 20px;
+    margin-left: 41px;
+    margin-right: 20px;
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+body:before {
+    content: "";
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    margin-left: 3.5vh;
+    margin-top: 1vh;
+    width: calc(100% - 110px);
+    height: calc(100% - 55px);
+    background: rgba(255, 255, 255, 0.1); /* Increased transparency for glass effect */
+    border-radius: 20px;
+    backdrop-filter: blur(15px); /* More blur for glass effect */
+    z-index: -1;
+}
+
+.sidebar-header {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1); /* Increased transparency for glass effect */
+    backdrop-filter: blur(15px); /* More blur for glass effect */
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+    .sidebar-menu li {
+        padding: 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+        position: relative;
+        transition: background 0.3s;
+    }
+
+        .sidebar-menu li.active {
+            background: rgba(255, 255, 255, 0.1); /* Increased transparency for glass effect */
+            backdrop-filter: blur(15px); /* More blur for glass effect */
+        }
+
+            .sidebar-menu li.active::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 100%;
+                width: 8px;
+                background-color: #ff4500;
+                border-radius: 0 5px 5px 0;
+            }
+
+        .sidebar-menu li:hover {
+            background: rgba(255, 255, 255, 0.1); /* Increased transparency for glass effect */
+            backdrop-filter: blur(15px); /* More blur for glass effect */
+        }
+
+        .sidebar-menu li a {
+            color: #ccc;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            font-size: 1em;
+        }
+
+            .sidebar-menu li a .icon {
+                margin-right: 15px;
+            }
+
+            .sidebar-menu li a .text {
+                display: inline-block;
+                flex-grow: 1;
+            }
+
+            .sidebar-menu li a .indicator {
+                margin-left: auto;
+                transition: transform 0.3s;
+            }
+
+.collapsible .submenu {
+    display: none;
+    list-style: none;
+    padding-left: 0px;
+    padding-top: 12px;
+    transition: max-height 0.3s ease-out;
+    overflow: hidden;
+    max-height: 0;
+}
+
+.collapsible.active .submenu {
+    display: block;
+    max-height: 500px; /* Adjust based on content */
+}
+
+.collapsible .submenu li {
+    padding: 10px 20px;
+    border: none;
+}
+
+    .collapsible .submenu li a {
+        font-size: 0.9em;
+        color: #ccc;
+        display: flex;
+        align-items: center;
+    }
+
+        .collapsible .submenu li a i {
+            margin-right: 10px;
+        }
+
+.collapsible .submenu-item-spacing {
+    padding-top: 10px; /* Add padding between submenu items */
+}
+
+.collapsible.active .indicator {
+    transform: rotate(180deg);
+}
+
+/* Body CSS with new gradient color combinations */
+html, body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    background-image: url("https://img.freepik.com/premium-photo/blurred-dark-background-abstract-blurred-background-blurred-background_900706-8622.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #ccc; /* Light text color */
+}
+
+.card_div {
+    position: relative;
+    top: 13vh;
+    left: 54vh;
+}
+
+/* Keyframes for the running border animation */
+@keyframes runningBorder {
+    0% {
+        outline-color: #4a90e2; /* Blue shade */
+    }
+
+    25% {
+        outline-color: #7f8c8d; /* Grey shade */
+    }
+
+    50% {
+        outline-color: #4a90e2; /* Blue shade */
+    }
+
+    75% {
+        outline-color: #7f8c8d; /* Grey shade */
+    }
+
+    100% {
+        outline-color: #4a90e2; /* Blue shade */
+    }
+}
+
+/* TRANSACTION FORM1 */
+
+.transaction-form {
+    background: rgba(255, 255, 255, 0.1); /* Increased transparency for glass effect */
+    backdrop-filter: blur(15px); /* More blur for glass effect */
+    border-radius: 20px; /* Border radius */
+    padding: 30px; /* Padding */
+    margin-left: 300px; /* Adjusted left margin */
+    margin-right: 20px; /* Adjusted right margin */
+    margin-top: 190px; /* Added top margin */
+    display: grid; /* Use CSS grid for layout */
+    grid-template-columns: repeat(2, 1fr); /* Two columns in each row */
+    grid-gap: 20px; /* Gap between grid items */
+    width: 55vh;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Box shadow for glassmorphism effect */
+    transition: outline 0.5s; /* Smooth transition for outline */
+    position: relative; /* Needed for pseudo-element */
+}
+
+    .transaction-form:hover {
+        outline: 5px solid transparent; /* Start with transparent outline */
+        animation: runningBorder 2s linear infinite; /* Running border animation */
+    }
+
+.transaction-header {
+    text-align: center;
+    grid-column: span 2; /* Span header across both columns */
+    margin-bottom: 20px;
+    font-size: 1.5em; /* Increase header font size */
+    color: #4a90e2; /* Header text color (blue shade) */
+}
+
+.transaction-form .form-group {
+    margin-bottom: 30px; /* Increased space between form groups */
+}
+
+    .transaction-form .form-group label {
+        font-weight: bold;
+        color: #ccc; /* Light text color */
+        display: flex; /* Use flexbox to align icon and text */
+        align-items: center; /* Align items vertically */
+        margin-bottom: 10px; /* Add space below labels */
+    }
+
+        .transaction-form .form-group label i {
+            margin-right: 10px; /* Add spacing between icon and text */
+            color: #4a90e2; /* Icon color (blue shade) */
+        }
+
+    .transaction-form .form-group input,
+    .transaction-form .form-group select,
+    .transaction-form .form-group textarea {
+        width: calc(100% - 20px); /* Make input fields fill the entire width */
+        padding: 12px; /* Adjust input field padding */
+        border: none; /* Remove default border */
+        border-bottom: 2px solid #ccc; /* Increase bottom border size */
+        border-radius: 0; /* Remove border radius */
+        background: transparent; /* Make background transparent */
+        color: #ccc; /* Light text color */
+        transition: border-color 0.3s, background-color 0.3s; /* Smooth transition for border and background color */
+        outline: none; /* Remove default focus outline */
+    }
+
+        .transaction-form .form-group input:focus,
+        .transaction-form .form-group select:focus,
+        .transaction-form .form-group textarea:focus {
+            background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+            border-bottom-color: #ccc; /* Border color on focus */
+        }
+
+        .transaction-form .form-group input:hover,
+        .transaction-form .form-group select:hover,
+        .transaction-form .form-group textarea:hover {
+            border-bottom-color: #4a90e2; /* Change border color on hover */
+        }
+
+.transaction-form button[type="submit"] {
+    grid-column: span 2; /* Span button across both columns */
+    background: linear-gradient(to bottom right, #4a90e2, #7f8c8d); /* Gradient button background (blue and grey shades) */
+    color: #fff; /* Button text color */
+    border: none;
+    border-radius: 10px;
+    padding: 15px 30px; /* Adjust button padding */
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+    .transaction-form button[type="submit"]:hover {
+        background: linear-gradient(to bottom right, #7f8c8d, #4a90e2); /* Gradient button background on hover (grey and blue shades) */
+    }
+
+/* Custom dropdown style */
+.transaction-form select {
+    width: calc(100% - 20px); /* Make dropdown fill the entire width */
+    padding: 12px; /* Adjust dropdown padding */
+    border: none; /* Remove default border */
+    border-bottom: 2px solid #ccc; /* Increase bottom border size */
+    border-radius: 0; /* Remove border radius */
+    background: transparent; /* Make background transparent */
+    color: #ccc; /* Light text color */
+    transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+    .transaction-form select:hover {
+        border-bottom-color: #4a90e2; /* Change border color on hover */
+    }
+
+    /* Custom dropdown arrow */
+    .transaction-form select::-ms-expand {
+        display: none; /* Hide default arrow in IE10 and IE11 */
+    }
+
+    .transaction-form select option {
+        color: #333; /* Option text color */
+    }
+
+/* TRANSACTION FORM 2 */
+
+.transaction-form2 {
+    left: 125vh;
+    background: rgba(255, 255, 255, 0.1); /* Increased transparency for glass effect */
+    backdrop-filter: blur(15px); /* More blur for glass effect */
+    border-radius: 20px; /* Border radius */
+    padding: 30px; /* Padding */
+    padding-bottom: 105px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    width: 55vh;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Box shadow for glassmorphism effect */
+    height: 66vh;
+    transition: outline 0.5s; /* Smooth transition for outline */
+    position: absolute;
+    margin-bottom: 4px;
+    bottom: 13.5vh;
+}
+
+    .transaction-form2:hover {
+        outline: 5px solid transparent; /* Start with transparent outline */
+        animation: runningBorder 2s linear infinite; /* Running border animation */
+    }
+
+    .transaction-form2 .form-group {
+        margin-bottom: 30px; /* Increased space between form groups */
+    }
+
+        .transaction-form2 .form-group label {
+            font-weight: bold;
+            color: #ccc; /* Light text color */
+            display: flex; /* Use flexbox to align icon and text */
+            align-items: center; /* Align items vertically */
+            margin-bottom: 10px; /* Add space below labels */
+        }
+
+            .transaction-form2 .form-group label i {
+                margin-right: 10px; /* Add spacing between icon and text */
+                color: #4a90e2; /* Icon color (blue shade) */
+            }
+
+        .transaction-form2 .form-group input,
+        .transaction-form2 .form-group select,
+        .transaction-form2 .form-group textarea {
+            width: calc(100% - 20px); /* Make input fields fill the entire width */
+            padding: 12px; /* Adjust input field padding */
+            border: none; /* Remove default border */
+            border-bottom: 2px solid #ccc; /* Increase bottom border size */
+            border-radius: 0; /* Remove border radius */
+            background: transparent; /* Make background transparent */
+            color: #ccc; /* Light text color */
+            transition: border-color 0.3s, background-color 0.3s; /* Smooth transition for border and background color */
+            outline: none; /* Remove default focus outline */
+        }
+
+            .transaction-form2 .form-group input:focus,
+            .transaction-form2 .form-group select:focus,
+            .transaction-form2 .form-group textarea:focus {
+                background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+                border-bottom-color: #ccc; /* Border color on focus */
+            }
+
+            .transaction-form2 .form-group input:hover,
+            .transaction-form2 .form-group select:hover,
+            .transaction-form2 .form-group textarea:hover {
+                border-bottom-color: #4a90e2; /* Change border color on hover */
+            }
+
+    .transaction-form2 button[type="submit"] {
+        grid-column: span 2; /* Span button across both columns */
+        background: linear-gradient(to bottom right, #4a90e2, #7f8c8d); /* Gradient button background (blue and grey shades) */
+        color: #fff; /* Button text color */
+        border: none;
+        border-radius: 10px;
+        padding: 15px 30px; /* Adjust button padding */
+        cursor: pointer;
+        transition: background-color 0.3s; /* Smooth transition for background color */
+    }
+
+        .transaction-form2 button[type="submit"]:hover {
+            background: linear-gradient(to bottom right, #7f8c8d, #4a90e2); /* Gradient button background on hover (grey and blue shades) */
+        }
+
+    /* Custom dropdown style */
+    .transaction-form2 select {
+        width: calc(100% - 20px); /* Make dropdown fill the entire width */
+        padding: 12px; /* Adjust dropdown padding */
+        border: none; /* Remove default border */
+        border-bottom: 2px solid #ccc; /* Increase bottom border size */
+        border-radius: 0; /* Remove border radius */
+        background: transparent; /* Make background transparent */
+        color: #ccc; /* Light text color */
+        transition: border-color 0.3s; /* Smooth transition for border color */
+    }
+
+        .transaction-form2 select:hover {
+            border-bottom-color: #4a90e2; /* Change border color on hover */
+        }
+
+        /* Custom dropdown arrow */
+        .transaction-form2 select::-ms-expand {
+            display: none; /* Hide default arrow in IE10 and IE11 */
+        }
+
+        .transaction-form2 select option {
+            color: #333; /* Option text color */
+        }
+
+.theader {
+    text-align: center;
+    font-size: 2em;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 16px 20px;
+    border-radius: 20px;
+    left: 21%;
+    top: 5%;
+    height: 8vh;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    position: absolute;
+    width: 150vh;
+}
